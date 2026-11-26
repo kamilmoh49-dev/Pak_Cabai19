@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Jenis Penyakit - Pak Cabai AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac',
+              400: '#4ade80', 500: '#22c55e', 600: '#16a34a', 700: '#15803d',
+              800: '#166534', 900: '#14532d', accent: '#39db4a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background: radial-gradient(circle at 12% 18%, #0f4c22 0%, #05260f 55%, #021407 100%);
+      font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-fade-up {
+      animation: fadeUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .custom-scroll::-webkit-scrollbar { width: 6px; }
+    .custom-scroll::-webkit-scrollbar-track { background: transparent; }
+    .custom-scroll::-webkit-scrollbar-thumb { background: rgba(22, 163, 74, 0.25); border-radius: 9999px; }
+    .custom-scroll::-webkit-scrollbar-thumb:hover { background: rgba(22, 163, 74, 0.45); }
+  </style>
+</head>
+<body class="min-h-screen lg:h-screen lg:overflow-hidden flex items-center justify-center p-2.5 sm:p-4 lg:p-5 antialiased">
+  <div class="relative w-full max-w-[1440px] lg:h-full bg-white rounded-[28px] shadow-[0_25px_70px_-15px_rgba(0,0,0,0.55)] overflow-hidden flex flex-col lg:flex-row border border-white/15">
+
+    <!-- Panel Kiri -->
+    <section class="relative w-full lg:w-[49%] lg:h-full overflow-hidden flex flex-col justify-between p-5 sm:p-7 lg:p-9 text-white z-0">
+      <div class="absolute inset-0 -z-20 bg-emerald-950">
+        <img alt="Tanaman cabai hijau" class="w-full h-full object-cover object-center transform scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwU3g286BN75g8ZO-HSWAxdeEL7GxEwQoyeqDMSTcF7t09dAgnL06cqI3xcAPeUP9V4SjP2Vjneg8iAESF2ba2JIPrpcZlYxpFdqkEzG5udiPmReQsGmUEuJYKI9bmziGZnFdDG0eCR8JBDhawk5qZDFRjR4wlDduB1JVVhfPNmMWPLIDTYTW6owHMn4yanrm8gCXR1o0K2RzYj9u83Ag7_3YBZ9wB8yEl8LqTsG_c" onerror="this.style.display='none'"/>
+        <div class="absolute inset-0 bg-gradient-to-br from-black/85 via-emerald-950/80 to-emerald-900/45 mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-emerald-950/50"></div>
+      </div>
+
+      <div class="absolute -top-20 -left-20 w-80 h-80 bg-brand-500/20 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+      <header class="relative z-30 flex items-center justify-between gap-2">
+        <a href="/" class="flex items-center space-x-3 group cursor-pointer">
+          <div class="w-11 h-11 bg-gradient-to-tr from-brand-600 via-lime-400 to-emerald-300 rounded-2xl flex items-center justify-center shadow-lg shadow-brand-500/30 ring-2 ring-white/25 transition-all duration-300 group-hover:scale-105 group-hover:rotate-3">
+            <svg class="w-6 h-6 text-emerald-950" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66l.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"></path>
+            </svg>
+          </div>
+          <div>
+            <span class="block text-xl sm:text-2xl font-extrabold tracking-tight text-white drop-shadow">
+              Pak <span class="text-brand-300">Cabai</span>
+            </span>
+            <span class="block text-[10px] uppercase font-semibold tracking-[0.18em] text-emerald-200/85 -mt-0.5">
+              Deteksi Cerdas Ramah Lingkungan
+            </span>
+          </div>
+        </a>
+
+        <!-- Badge Desktop -->
+        <div class="hidden sm:flex items-center space-x-2 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/15 text-xs font-medium text-emerald-100">
+          <span class="w-2 h-2 rounded-full bg-brand-400 animate-pulse"></span>
+          <span>AI Vision Aktif</span>
+        </div>
+
+        <!-- Tombol Garis 3 Pojok Kanan Atas (Khusus HP) -->
+        <div class="relative sm:hidden">
+          <button type="button" id="mobile-menu-btn" aria-expanded="false" aria-label="Buka Menu"
+            class="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white/15 hover:bg-white/25 text-white border border-white/20 backdrop-blur-md transition">
+            <svg id="icon-hamburger" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg id="icon-close" class="hidden w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+
+          <!-- Dropdown Menu HP -->
+          <div id="mobile-menu-dropdown"
+            class="hidden absolute right-0 top-12 w-48 bg-white rounded-2xl shadow-2xl border border-slate-200/90 p-1.5 z-50 space-y-1 text-xs">
+            <a href="/" class="block px-3.5 py-2.5 rounded-xl text-slate-600 hover:bg-slate-50 font-medium">Beranda</a>
+            <a href="/tentang" class="block px-3.5 py-2.5 rounded-xl text-slate-600 hover:bg-slate-50 font-medium">Tentang Sistem</a>
+            <a href="/panduan" class="block px-3.5 py-2.5 rounded-xl text-slate-600 hover:bg-slate-50 font-medium">Panduan</a>
+            <a href="/penyakit" class="block px-3.5 py-2.5 rounded-xl bg-emerald-50 text-emerald-700 font-bold">Jenis Penyakit</a>
+          </div>
+        </div>
+      </header>
+
+      <div class="relative z-20 my-5 lg:my-auto py-2 max-w-lg space-y-4">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-400/15 border border-brand-300/30 text-brand-200 text-xs font-semibold">
+          Basis Pengetahuan Tanaman
+        </span>
+        <h1 class="text-2xl sm:text-3xl xl:text-[38px] font-extrabold tracking-tight text-white drop-shadow leading-[1.15]">
+          Katalog Gejala &amp; <br/>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 via-lime-200 to-white">
+            Penyakit Daun Cabai
+          </span>
+        </h1>
+        <p class="text-xs sm:text-sm text-emerald-100/85 leading-relaxed">
+          Pelajari ciri fisik serta langkah pengendalian empat kategori kondisi daun cabai yang dikenali oleh model Pak Cabai AI.
+        </p>
+        <div class="pt-1">
+          <a href="/" class="inline-flex items-center gap-2.5 px-7 py-3.5 bg-gradient-to-r from-brand-400 to-lime-400 hover:from-brand-300 hover:to-lime-300 active:scale-[0.98] text-emerald-950 font-bold text-xs sm:text-sm tracking-wide rounded-2xl shadow-lg shadow-brand-500/30 transition-all duration-200 group">
+            <span>Uji Foto Daun Sekarang</span>
+            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <footer class="relative z-20 text-[11px] text-emerald-200/65 flex items-center space-x-2.5">
+        <span>© 2026 Pak Cabai Engine</span>
+        <span>•</span>
+        <span>Klasifikasi Citra Tanaman</span>
+      </footer>
+    </section>
+
+    <!-- Pembatas Gelombang -->
+    <div class="hidden lg:block absolute inset-y-0 left-[46%] w-[85px] pointer-events-none z-10">
+      <svg class="w-full h-full" fill="none" preserveAspectRatio="none" viewBox="0 0 100 1000">
+        <path d="M 100 0 C 55 200 15 260 45 480 C 75 700 100 800 100 1000 L 100 0 Z" fill="rgba(0,0,0,0.08)" transform="translate(-4, 0)"></path>
+        <path d="M 100 0 C 55 200 15 260 45 480 C 75 700 100 800 100 1000 L 100 0 Z" fill="#ffffff"></path>
+      </svg>
+    </div>
+
+    <!-- Panel Kanan: Jenis Penyakit -->
+    <main class="relative w-full lg:w-[51%] lg:h-full bg-white flex flex-col justify-between p-5 sm:p-7 lg:p-8 xl:px-11 z-20 overflow-y-auto custom-scroll">
+      <!-- Pill Navigation (Khusus Desktop) -->
+      <nav aria-label="Menu Utama" class="hidden sm:flex items-center justify-end pb-4">
+        <div class="inline-flex flex-wrap items-center gap-1 bg-slate-100/90 p-1 rounded-2xl border border-slate-200/70 text-xs sm:text-[13px]">
+          <a href="/" class="px-3.5 py-1.5 rounded-xl text-slate-600 hover:text-slate-900 font-medium transition">Beranda</a>
+          <a href="/tentang" class="px-3.5 py-1.5 rounded-xl text-slate-600 hover:text-slate-900 font-medium transition">Tentang Sistem</a>
+          <a href="/panduan" class="px-3.5 py-1.5 rounded-xl text-slate-600 hover:text-slate-900 font-medium transition">Panduan</a>
+          <a href="/penyakit" class="px-3.5 py-1.5 rounded-xl bg-white text-emerald-700 font-bold shadow-sm transition">Jenis Penyakit</a>
+        </div>
+      </nav>
+
+      <div class="flex-1 flex flex-col justify-center my-auto w-full space-y-3.5 animate-fade-up">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight leading-snug">
+            Jenis Penyakit &amp; Kondisi Daun
+          </h2>
+          <p class="mt-0.5 text-xs sm:text-sm text-slate-500">
+            Referensi 4 kelas citra daun yang dikenali oleh model Pak Cabai AI.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="rounded-2xl p-4 border border-slate-200/80 bg-white shadow-sm hover:border-amber-300 hover:shadow-md transition-all space-y-1.5">
+            <div class="flex items-center justify-between">
+              <span class="text-xs sm:text-sm font-bold text-slate-900">Antraknosa (Patek)</span>
+              <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800">Jamur</span>
+            </div>
+            <p class="text-[11.5px] sm:text-xs text-slate-600 leading-relaxed">
+              Bercak cokelat kehitaman agak cekung dengan lingkaran konsentris. Tangani dengan pemangkasan bagian sakit dan fungisida mankozeb/propineb.
+            </p>
+          </div>
+
+          <div class="rounded-2xl p-4 border border-slate-200/80 bg-white shadow-sm hover:border-orange-300 hover:shadow-md transition-all space-y-1.5">
+            <div class="flex items-center justify-between">
+              <span class="text-xs sm:text-sm font-bold text-slate-900">Bercak Cercospora</span>
+              <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-orange-100 text-orange-800">Jamur</span>
+            </div>
+            <p class="text-[11.5px] sm:text-xs text-slate-600 leading-relaxed">
+              Bercak bulat kecil cokelat dengan bagian tengah pucat menyerupai mata katak. Hindari penyiraman sore hari dari atas tajuk daun.
+            </p>
+          </div>
+
+          <div class="rounded-2xl p-4 border border-slate-200/80 bg-white shadow-sm hover:border-rose-300 hover:shadow-md transition-all space-y-1.5">
+            <div class="flex items-center justify-between">
+              <span class="text-xs sm:text-sm font-bold text-slate-900">Keriting Daun</span>
+              <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-rose-100 text-rose-800">Virus / Hama</span>
+            </div>
+            <p class="text-[11.5px] sm:text-xs text-slate-600 leading-relaxed">
+              Helai daun mengeriting, menggulung, menebal, dan pucuk kerdil akibat virus Gemini atau serangan kutu kebul, thrips, dan tungau.
+            </p>
+          </div>
+
+          <div class="rounded-2xl p-4 border border-emerald-200/80 bg-emerald-50/50 shadow-sm hover:border-emerald-400 hover:shadow-md transition-all space-y-1.5">
+            <div class="flex items-center justify-between">
+              <span class="text-xs sm:text-sm font-bold text-emerald-950">Daun Sehat</span>
+              <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-200/80 text-emerald-900">Normal</span>
+            </div>
+            <p class="text-[11.5px] sm:text-xs text-emerald-800/90 leading-relaxed">
+              Permukaan daun hijau segar merata tanpa bercak maupun keriting abnormal. Pertahankan pemupukan berimbang dan sanitasi gulma.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <footer class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400">
+        <span>Pak Cabai AI • Diagnosis Daun Cabai</span>
+        <span>Halaman Jenis Penyakit</span>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const menuDrop = document.getElementById('mobile-menu-dropdown');
+      const iconOpen = document.getElementById('icon-hamburger');
+      const iconClose = document.getElementById('icon-close');
+      if (!menuBtn || !menuDrop) return;
+
+      menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isHidden = menuDrop.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isHidden));
+        iconOpen.classList.toggle('hidden', !isHidden);
+        iconClose.classList.toggle('hidden', isHidden);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!menuDrop.contains(e.target) && !menuBtn.contains(e.target)) {
+          menuDrop.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+          iconOpen.classList.remove('hidden');
+          iconClose.classList.add('hidden');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
